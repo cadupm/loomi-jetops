@@ -15,6 +15,12 @@ class DeleteUserUseCase {
   ) {}
 
   async execute({ id }: IRequest): Promise<User[]> {
+    const user = await this.usersRepository.findById(id)
+
+    if (!user) {
+      throw new Error('User does not exist')
+    }
+
     const users = await this.usersRepository.deleteUser(id)
 
     return users
