@@ -1,6 +1,8 @@
 import express from 'express'
 import 'dotenv/config'
 
+import './database'
+
 const port = process.env.APP_PORT || 3000
 const app = express()
 
