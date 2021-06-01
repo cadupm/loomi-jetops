@@ -11,6 +11,9 @@ const findUserController = new FindUserController()
 
 usersRoutes.post('/', createUserController.handle)
 usersRoutes.get('/', listAllUsersController.handle)
-usersRoutes.get('/:user_id', findUserController.handle)
+usersRoutes.get('/:id', findUserController.handle)
+usersRoutes.delete('/:id', (request, response) => {
+  return response.json({ err: 'End point created'})
+})
 
 export { usersRoutes }

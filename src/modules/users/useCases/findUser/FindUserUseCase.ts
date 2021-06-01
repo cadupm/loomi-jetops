@@ -5,7 +5,7 @@ import { IUsersRepository } from "../../repositories/IUsersRepository";
 
 
 interface IRequest {
-  user_id: string
+  id: string
 }
 
 @injectable()
@@ -15,8 +15,8 @@ class FindUserUseCase {
     private usersRepository: IUsersRepository
   ) {}
 
-  async execute({ user_id }: IRequest): Promise<User> {
-    const user = await this.usersRepository.findById(user_id)
+  async execute({ id }: IRequest): Promise<User> {
+    const user = await this.usersRepository.findById(id)
 
     if(!user) {
       throw new Error('User is not found!')

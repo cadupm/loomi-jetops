@@ -5,12 +5,12 @@ import { FindUserUseCase } from './FindUserUseCase'
 class FindUserController {
   async handle(request: Request, response: Response): Promise<Response> {
     try {
-      const { user_id } = request.params
+      const { id } = request.params
 
       const findUserUseCase = container.resolve(FindUserUseCase)
 
       const user = await findUserUseCase.execute({
-        user_id
+        id
       })
 
       return response.json(user)
