@@ -6,7 +6,8 @@
   "author": "Cadu <ceblpm@cin.ufpe.br>",
   "license": "MIT",
   "scripts": {
-    "dev": "tsnd --inspect --transpile-only --ignore-watch node_modules --respawn src/server.ts"
+    "dev": "tsnd --inspect --transpile-only --ignore-watch node_modules --respawn src/server.ts",
+    "typeorm": "tsnd node_modules/typeorm/cli"
   },
   "dependencies": {
     "dotenv": "^10.0.0",
