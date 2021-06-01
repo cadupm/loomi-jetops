@@ -1,9 +1,10 @@
 import { Router } from 'express'
+import { CreateUserController } from '../modules/users/useCases/createUser/CreateUserController'
 
 const usersRoutes = Router()
 
-usersRoutes.post('/', (request, response) => {
-  return response.json({ msg: 'Endpoint to user route already created.'})
-})
+const createUserController = new CreateUserController()
+
+usersRoutes.post('/', createUserController.handle)
 
 export { usersRoutes }
