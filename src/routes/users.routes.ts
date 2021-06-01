@@ -9,5 +9,8 @@ const listAllUsersController = new ListAllUsersController()
 
 usersRoutes.post('/', createUserController.handle)
 usersRoutes.get('/', listAllUsersController.handle)
+usersRoutes.get('/:id', (request, response) => {
+  return response.json({ msg: 'End-point connected to find an user.'})
+})
 
 export { usersRoutes }
