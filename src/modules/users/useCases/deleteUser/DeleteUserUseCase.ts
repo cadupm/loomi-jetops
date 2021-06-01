@@ -3,27 +3,28 @@ import { injectable, inject } from "tsyringe";
 import { User } from "../../entities/User";
 import { IUsersRepository } from "../../repositories/IUsersRepository";
 
-
 interface IRequest {
-  id: string
+  id : string
 }
 
 @injectable()
-class FindUserUseCase { 
+class DeleteUserUseCase {
   constructor(
     @inject('UsersRepository')
     private usersRepository: IUsersRepository
   ) {}
 
-  async execute({ id }: IRequest): Promise<User> {
+  async execute({ id }: IRequest): Promise<User[]> {
     const user = await this.usersRepository.findById(id)
 
-    if(!user) {
-      throw new Error('User is not found!')
-    } 
+    if (!user) {
+      throw new Error('User does not exist')
+    }
 
-    return user
+    const users = await this.usersRepository.deleteUser(id)
+
+    return users
   }
 }
 
-export { FindUserUseCase }
+export { DeleteUserUseCase }
