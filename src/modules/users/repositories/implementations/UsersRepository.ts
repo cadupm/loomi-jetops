@@ -29,7 +29,25 @@ class UsersRepository implements IUsersRepository {
   async listAllUsers(): Promise<User[]> {
     const users = await this.repository.find()
 
+    // everyone can list, so we cannot show the users hashed-password
+    // users.map(user => delete user.password)
+
     return users
+  }
+
+  async findById(id: string): Promise<User> {
+    const user = await this.repository.findOne(id)
+    
+    // everyone can list it, so we cannot show the user hashed-password
+    // delete user.password
+
+    return user
+  }
+
+  async deleteUser(id: string): Promise<User[]> {
+    await this.repository.delete(id)
+
+    return await this.listAllUsers()
   }
 
 }
