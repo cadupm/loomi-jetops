@@ -18,7 +18,7 @@ class DeleteAircraftUseCase {
     const aircraft = await this.aircraftsRepository.findById(id)
 
     if (!aircraft) {
-      throw new AppError('Aircraf does not exist', 404)
+      throw new AppError('Aircraft does not exist', 404)
     }
 
     return await this.aircraftsRepository.delete(id)
