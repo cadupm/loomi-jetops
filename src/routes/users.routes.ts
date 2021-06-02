@@ -17,6 +17,9 @@ usersRoutes.post('/', createUserController.handle)
 usersRoutes.get('/', listAllUsersController.handle)
 usersRoutes.get('/:id', findUserController.handle)
 usersRoutes.delete('/:id', ensureAuthenticated, deleteUserController.handle)
+usersRoutes.patch('/:id', (request, response) => {
+  return response.json({ msg: 'End point to update user linked..'})
+})
 
 
 export { usersRoutes }
