@@ -1,4 +1,4 @@
-import { getRepository, Repository } from "typeorm";
+import { getRepository, Repository, UpdateResult } from "typeorm";
 import { ICreateUserDTO } from "../../dtos/ICreateUserDTO";
 import { User } from "../../entities/User";
 import { IUsersRepository } from "../IUsersRepository";
@@ -48,6 +48,19 @@ class UsersRepository implements IUsersRepository {
     await this.repository.delete(id)
 
     return await this.listAllUsers()
+  }
+
+  async updateUser(id: string, name: string): Promise<UpdateResult> {
+    const user = await this.repository
+    .createQueryBuilder()
+    .update(User)
+    .set({ name, updated_at: new Date() })
+    .where("id = :id", { id })
+    .returning(["id", "name", "email", "password", "created_at", "updated_at"])
+    .updateEntity(true)
+    .execute();
+
+    return user
   }
 
 }
