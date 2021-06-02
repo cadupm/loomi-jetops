@@ -2,15 +2,15 @@ version: "3.9"
 
 services:
   database:
-    image: postgres
+    image: ${DOCKER_IMAGE}
     container_name: database_jetops
     restart: always
     ports:
       - 5432:5432
     environment:
-      - POSTGRES_USER=docker
-      - POSTGRES_PASSWORD=docker
-      - POSTGRES_DB=jetops
+      - POSTGRES_USER=${DOCKER_USER_AUTH}
+      - POSTGRES_PASSWORD=${DOCKER_PASSWORD_AUTH}
+      - POSTGRES_DB=${DOCKER_DEFAULT_DB}
     volumes:
       - pgdata:/data/postgres
 
