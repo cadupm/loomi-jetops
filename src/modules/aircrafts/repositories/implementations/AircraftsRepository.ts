@@ -38,6 +38,12 @@ class AircraftsRepository implements IAircraftsRepository {
   async listAllAircrafts(): Promise<Aircraft[]> {
     return this.repository.find()
   }
+
+  async delete(id: string): Promise<Aircraft[]> {
+    await this.repository.delete(id)
+
+    return this.listAllAircrafts()
+  }
 }
 
 export { AircraftsRepository }

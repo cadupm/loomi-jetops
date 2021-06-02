@@ -7,6 +7,7 @@ interface IAircraftsRepository {
   findById(id: string): Promise<Aircraft>
   save(aircraft: Aircraft): Promise<void>
   listAllAircrafts(): Promise<Aircraft[]>
+  delete(id: string): Promise<Aircraft[]>
 }
 
 export { IAircraftsRepository }
