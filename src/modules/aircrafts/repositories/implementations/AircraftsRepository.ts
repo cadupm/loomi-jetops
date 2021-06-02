@@ -24,6 +24,12 @@ class AircraftsRepository implements IAircraftsRepository {
 
     return aircraft
   }
+
+  async findById(id: string): Promise<Aircraft> {
+    const aircraft = this.repository.findOne(id)
+
+    return aircraft
+  }
 }
 
 export { AircraftsRepository }
