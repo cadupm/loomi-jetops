@@ -14,6 +14,9 @@ aircraftsRoutes.use(ensureAuthenticated)
 
 aircraftsRoutes.post('/', createAircraftController.handle)
 aircraftsRoutes.get('/', listAircraftsController.handle)
+aircraftsRoutes.get('/:id', (request, response) => {
+  return response.json({msg: 'end-point created.'})
+}) 
 aircraftsRoutes.patch('/:id', updateAircraftController.handle) 
 
 export { aircraftsRoutes }
