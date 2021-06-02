@@ -23,6 +23,7 @@ class UpdateAircraftUseCase {
     }
 
     aircraft.name = name
+    aircraft.updated_at = new Date()
 
     await this.aircraftsRepository.save(aircraft)
 
