@@ -1,4 +1,5 @@
 import { inject, injectable } from "tsyringe";
+import { AppError } from "../../../../errors/AppError";
 import { Aircraft } from "../../entities/Aircraft";
 import { IAircraftsRepository } from "../../repositories/IAircrafsRepository";
 
@@ -16,6 +17,10 @@ class UpdateAircraftUseCase {
 
   async execute({ id, name }: IRequest): Promise<Aircraft> {
     const aircraft = await this.aircraftsRepository.findById(id)
+
+    if(!aircraft) {
+      throw new AppError('Aicraft does not exist', 404)
+    }
 
     aircraft.name = name
 
