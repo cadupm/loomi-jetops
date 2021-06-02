@@ -18,5 +18,8 @@ aircraftsRoutes.post('/', createAircraftController.handle)
 aircraftsRoutes.get('/', listAircraftsController.handle)
 aircraftsRoutes.get('/:id', findAircraftController.handle)
 aircraftsRoutes.patch('/:id', updateAircraftController.handle) 
+aircraftsRoutes.delete('/:id', (request, response) => {
+  return response.json({msg: 'End-point setted up'})
+})
 
 export { aircraftsRoutes }
