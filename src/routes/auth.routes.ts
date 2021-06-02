@@ -1,9 +1,11 @@
 import { Router } from 'express'
 
+import { AuthenticateUserController } from '../modules/users/useCases/authenticateUser/AuthenticateUserController'
+
 const authRoutes = Router()
 
-authRoutes.post('/', (request, response) => {
-  return response.json({ msg: 'Auth end-point created!'})
-})
+const authenticateUserController = new AuthenticateUserController()
+
+authRoutes.post('/', authenticateUserController.handle)
 
 export { authRoutes }
