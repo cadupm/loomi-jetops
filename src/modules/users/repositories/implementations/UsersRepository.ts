@@ -30,7 +30,7 @@ class UsersRepository implements IUsersRepository {
     const users = await this.repository.find()
 
     // everyone can list, so we cannot show the users hashed-password
-    users.map(user => delete user.password)
+    // users.map(user => delete user.password)
 
     return users
   }
@@ -39,7 +39,7 @@ class UsersRepository implements IUsersRepository {
     const user = await this.repository.findOne(id)
     
     // everyone can list it, so we cannot show the user hashed-password
-    delete user.password
+    // delete user.password
 
     return user
   }
