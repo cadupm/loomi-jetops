@@ -1,4 +1,5 @@
 import { injectable, inject } from "tsyringe";
+import { AppError } from "../../../../errors/AppError";
 
 import { User } from "../../entities/User";
 import { IUsersRepository } from "../../repositories/IUsersRepository";
@@ -19,7 +20,7 @@ class FindUserUseCase {
     const user = await this.usersRepository.findById(id)
 
     if(!user) {
-      throw new Error('User is not found!')
+      throw new AppError('User does not found!', 404)
     } 
 
     return user
