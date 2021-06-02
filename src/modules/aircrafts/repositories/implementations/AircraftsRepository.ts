@@ -19,6 +19,11 @@ class AircraftsRepository implements IAircraftsRepository {
     await this.repository.save(aircraft)
   }
 
+  async findByName(name: string): Promise<Aircraft> {
+    const aircraft = this.repository.findOne({ name })
+
+    return aircraft
+  }
 }
 
 export { AircraftsRepository }
