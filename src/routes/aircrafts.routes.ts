@@ -11,6 +11,9 @@ const updateAircraftController = new UpdateAircraftController()
 aircraftsRoutes.use(ensureAuthenticated)
 
 aircraftsRoutes.post('/', createAircraftController.handle)
+aircraftsRoutes.get('/', (request, response) => {
+  return response.json({ msg: 'End-point connected to list all aircrafts'})
+})
 aircraftsRoutes.patch('/:id', updateAircraftController.handle) 
 
 export { aircraftsRoutes }
