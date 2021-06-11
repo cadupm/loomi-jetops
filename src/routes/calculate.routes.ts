@@ -1,9 +1,15 @@
 import { Router } from 'express'
+import multer from 'multer'
+import multerConfig from '../config/upload'
+
+import { CalculateRoutesController } from '../calculateRoutes/CalculateRoutesController'
 
 const calculateRoutes = Router()
 
-calculateRoutes.get('/:id', (request, response) => {
-  return response.json({msg: 'Calculate optimus route set up'})
-})
+const calculateRoutesController = new CalculateRoutesController()
+
+const upload = multer(multerConfig)
+
+calculateRoutes.get('/:aircraftId', upload.single('file'), calculateRoutesController.handle)
 
 export { calculateRoutes }
