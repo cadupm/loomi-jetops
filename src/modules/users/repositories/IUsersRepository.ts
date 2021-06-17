@@ -1,6 +1,6 @@
+import { UpdateResult } from 'typeorm'
 import { User } from '../entities/User'
 import { ICreateUserDTO } from '../dtos/ICreateUserDTO'
-import { UpdateResult } from 'typeorm'
 
 interface IUsersRepository {
   create(data: ICreateUserDTO): Promise<void>

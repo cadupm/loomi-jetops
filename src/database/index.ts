@@ -1,14 +1,14 @@
-import { createConnection, getConnectionOptions } from 'typeorm';
+import { createConnection, getConnectionOptions } from 'typeorm'
 
 interface IOptions {
-  host: string;
+  host: string
 }
 
 getConnectionOptions().then(options => {
-  const newOptions = options as IOptions;
-  newOptions.host = 'database'; 
+  const newOptions = options as IOptions
+  newOptions.host = 'database'
   createConnection({
     ...options,
-  });
+  })
   // console.log(`Database connected`)
-});
+})

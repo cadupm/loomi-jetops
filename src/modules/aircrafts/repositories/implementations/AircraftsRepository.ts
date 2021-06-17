@@ -1,7 +1,7 @@
-import { getRepository, Repository } from "typeorm";
+import { getRepository, Repository } from 'typeorm'
 import { ICreateAircraftDTO } from '../../dtos/ICreateAircraftDTO'
-import { Aircraft } from "../../entities/Aircraft";
-import { IAircraftsRepository } from "../IAircrafsRepository";
+import { Aircraft } from '../../entities/Aircraft'
+import { IAircraftsRepository } from '../IAircrafsRepository'
 
 class AircraftsRepository implements IAircraftsRepository {
   private repository: Repository<Aircraft>
@@ -10,10 +10,10 @@ class AircraftsRepository implements IAircraftsRepository {
     this.repository = getRepository(Aircraft)
   }
 
-  async create({ name, type}: ICreateAircraftDTO): Promise<void> {
+  async create({ name, type }: ICreateAircraftDTO): Promise<void> {
     const aircraft = this.repository.create({
-      name, 
-      type
+      name,
+      type,
     })
 
     await this.repository.save(aircraft)

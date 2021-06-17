@@ -4,11 +4,11 @@ import { Column, CreateDateColumn, Entity, PrimaryColumn } from 'typeorm'
 @Entity('aircrafts')
 class Aircraft {
   @PrimaryColumn()
-  id: string 
+  id: string
 
   @Column()
   name: string
-  
+
   @Column()
   type: string
 
@@ -19,11 +19,10 @@ class Aircraft {
   updated_at: Date
 
   constructor() {
-    if(!this.id) {
+    if (!this.id) {
       this.id = uuid()
     }
   }
-
 }
 
 export { Aircraft }

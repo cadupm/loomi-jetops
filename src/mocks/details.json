@@ -1,0 +1,98 @@
+[
+  {
+    "departure": "UUWW",
+    "arrival": "EVRA",
+    "departure_date": "2021-04-21 08:00:00",
+    "flight_duration": 55,
+    "turn_around": 35,
+    "profit": 4000
+  },
+  {
+    "departure": "EVRA",
+    "arrival": "LUKK",
+    "departure_date": "2021-04-21 14:00:00",
+    "flight_duration": 90,
+    "turn_around": 35,
+    "profit": 4000
+  },
+  {
+    "departure": "EDDH",
+    "arrival": "LUKK",
+    "departure_date": "2021-04-21 22:00:00",
+    "flight_duration": 30,
+    "turn_around": 30,
+    "profit": 4500
+  },
+  {
+    "departure": "UUWW",
+    "arrival": "LUKK",
+    "departure_date": "2021-04-22 06:30:00",
+    "flight_duration": 70,
+    "turn_around": 22,
+    "profit": 5000
+  },
+  {
+    "departure": "EDDH",
+    "arrival": "EVRA",
+    "departure_date": "2021-04-21 15:00:00",
+    "flight_duration": 80,
+    "turn_around": 20,
+    "profit": 5000
+  },
+  {
+    "departure": "UUWW",
+    "arrival": "LUKK",
+    "departure_date": "2021-04-21 23:00:00",
+    "flight_duration": 45,
+    "turn_around": 60,
+    "profit": 5000
+  },
+  {
+    "departure": "LUKK",
+    "arrival": "UUWW",
+    "departure_date": "2021-04-21 14:00:00",
+    "flight_duration": 120,
+    "turn_around": 30,
+    "profit": 5000
+  },
+  {
+    "departure": "LUKK",
+    "arrival": "EVRA",
+    "departure_date": "2021-04-21 13:00:00",
+    "flight_duration": 100,
+    "turn_around": 15,
+    "profit": 5300
+  },
+  {
+    "departure": "EVRA",
+    "arrival": "EDDH",
+    "departure_date": "2021-04-21 13:00:00",
+    "flight_duration": 66,
+    "turn_around": 32,
+    "profit": 5000
+  },
+  {
+    "departure": "EVRA",
+    "arrival": "UUWW",
+    "departure_date": "2021-04-21 13:00:00",
+    "flight_duration": 55,
+    "turn_around": 55,
+    "profit": 5000
+  },
+  {
+    "departure": "EVRA",
+    "arrival": "UUWW",
+    "departure_date": "2021-04-21 14:00:00",
+    "flight_duration": 51,
+    "turn_around": 29,
+    "profit": 5000
+  },
+  {
+    "departure": "EVRA",
+    "arrival": "UUWW",
+    "departure_date": "2021-04-21 17:00:00",
+    "flight_duration": 0,
+    "turn_around": 30,
+    "profit": 5000
+  }
+]

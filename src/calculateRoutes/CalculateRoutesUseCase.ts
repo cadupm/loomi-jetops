@@ -1,10 +1,10 @@
-import fs from 'fs'
-import csvParse from 'csv-parse'
+// import fs from 'fs'
+// import csvParse from 'csv-parse'
 import { findPathsToOptimize } from '../utils/findPathsToOptimize'
 import { optimizePathGraph } from '../utils/optimizePathGraph'
-import { optimalDfs } from '../utils/optimalDfs'
+import { optimalDfs, IPossiblePaths } from '../utils/optimalDfs'
 
-import { IPossiblePaths } from '../utils/optimalDfs'
+import confirmedFlights from '../mocks/confirmedFlights.json'
 
 export interface IConfirmedFlights {
   aircraftId: string
@@ -13,11 +13,13 @@ export interface IConfirmedFlights {
   departure_date: string
 }
 
-const turn_around = 60
+// const turn_around = 60
 
 class CalculateRoutesUseCase {
-  async loadConfirmedFlights(file: Express.Multer.File): Promise<IConfirmedFlights[]> {
-      return new Promise((resolve, reject) => {
+  /* async loadConfirmedFlights(
+    file: Express.Multer.File,
+  ): Promise<IConfirmedFlights[]> {
+    return new Promise((resolve, reject) => {
       const flights: IConfirmedFlights[] = []
 
       const stream = fs.createReadStream(file.path)
@@ -26,42 +28,56 @@ class CalculateRoutesUseCase {
 
       stream.pipe(parseFile)
 
-      parseFile.on('data', (line) =>{
-        const [aircraftId, departure, arrival, departure_date] = line
+      parseFile
+        .on('data', line => {
+          const [aircraftId, departure, arrival, departure_date] = line
 
-        flights.push({
-          aircraftId,
-          departure,
-          arrival,
-          departure_date
+          flights.push({
+            aircraftId,
+            departure,
+            arrival,
+            departure_date,
+          })
         })
-      })
 
-      .on('end', () => {
-        // console.log(flights)
-        fs.promises.unlink(file.path)
-        resolve(flights)
-      })
+        .on('end', () => {
+          // console.log(flights)
+          fs.promises.unlink(file.path)
+          resolve(flights)
+        })
 
-      .on('error', (err) => {
-        reject(err)
+        .on('error', err => {
+          reject(err)
+        })
     })
-  })
-}
+  } */
 
-  async execute(aircraftId, file): Promise<IPossiblePaths[]> {
-    const allconfirmedFlights = await this.loadConfirmedFlights(file)
-    const specificAircraftconfirmedFlights = allconfirmedFlights.filter((flight) => flight.aircraftId === aircraftId)
-  
-    const pathsToOptimize = await findPathsToOptimize(specificAircraftconfirmedFlights)
+  async execute(aircraftId: string): Promise<IPossiblePaths[]> {
+    const allconfirmedFlights = confirmedFlights
+    const specificAircraftConfirmedFlights = allconfirmedFlights.filter(
+      flight => flight.aircraftId === aircraftId,
+    )
 
-    const possiblePaths = await Promise.all(pathsToOptimize.map(path => {
-      const graph = optimizePathGraph(path)
-      return optimalDfs(graph, path.from, path.to, path.start_date, path.end_date)
-    }))
+    const pathsToOptimize = await findPathsToOptimize(
+      specificAircraftConfirmedFlights,
+    )
+
+    // console.log(pathsToOptimize)
+
+    const possiblePaths = await Promise.all(
+      pathsToOptimize.map(path => {
+        const graph = optimizePathGraph(path)
+        return optimalDfs(
+          graph,
+          path.from,
+          path.to,
+          path.start_date,
+          path.end_date,
+        )
+      }),
+    )
     return possiblePaths
   }
 }
 
 export { CalculateRoutesUseCase }
-

@@ -10,12 +10,11 @@ class DeleteUserController {
     const deleteUserUseCase = container.resolve(DeleteUserUseCase)
 
     const users = await deleteUserUseCase.execute({
-      id
+      id,
     })
 
     return response.json(users)
   }
-
 }
 
 export { DeleteUserController }

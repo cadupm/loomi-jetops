@@ -19,8 +19,7 @@ aircraftsRoutes.use(ensureAuthenticated)
 aircraftsRoutes.post('/', createAircraftController.handle)
 aircraftsRoutes.get('/', listAircraftsController.handle)
 aircraftsRoutes.get('/:id', findAircraftController.handle)
-aircraftsRoutes.patch('/:id', updateAircraftController.handle) 
+aircraftsRoutes.patch('/:id', updateAircraftController.handle)
 aircraftsRoutes.delete('/:id', deleteAircraftController.handle)
-
 
 export { aircraftsRoutes }

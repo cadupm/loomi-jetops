@@ -1,5 +1,5 @@
-import { ICreateAircraftDTO } from "../dtos/ICreateAircraftDTO";
-import { Aircraft } from "../entities/Aircraft";
+import { ICreateAircraftDTO } from '../dtos/ICreateAircraftDTO'
+import { Aircraft } from '../entities/Aircraft'
 
 interface IAircraftsRepository {
   create(data: ICreateAircraftDTO): Promise<void>

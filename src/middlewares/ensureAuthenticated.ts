@@ -8,7 +8,11 @@ interface IPayload {
   sub: string
 }
 
-async function ensureAuthenticated(request: Request, response: Response, next: NextFunction) {
+async function ensureAuthenticated(
+  request: Request,
+  response: Response,
+  next: NextFunction,
+) {
   const authHeader = request.headers.authorization
 
   if (!authHeader) {
@@ -18,17 +22,20 @@ async function ensureAuthenticated(request: Request, response: Response, next: N
   const [, token] = authHeader.split(' ')
 
   try {
-    const { sub: user_id } = verify(token, process.env.TOKEN_SECRET_KEY) as IPayload
+    const { sub: user_id } = verify(
+      token,
+      process.env.TOKEN_SECRET_KEY,
+    ) as IPayload
 
     const usersRepository = new UsersRepository()
     const user = await usersRepository.findById(user_id)
 
-    if(!user) {
+    if (!user) {
       throw new AppError('User does not exist', 401)
     }
 
     request.user = {
-      id: user_id
+      id: user_id,
     }
 
     next()

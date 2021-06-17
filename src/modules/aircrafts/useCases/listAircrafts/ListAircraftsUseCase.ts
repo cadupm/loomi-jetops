@@ -1,12 +1,12 @@
-import { inject, injectable } from "tsyringe";
-import { Aircraft } from "../../entities/Aircraft";
-import { IAircraftsRepository } from "../../repositories/IAircrafsRepository";
+import { inject, injectable } from 'tsyringe'
+import { Aircraft } from '../../entities/Aircraft'
+import { IAircraftsRepository } from '../../repositories/IAircrafsRepository'
 
 @injectable()
 class ListAircraftsUseCase {
   constructor(
     @inject('AircraftsRepository')
-    private aircraftsRepository: IAircraftsRepository
+    private aircraftsRepository: IAircraftsRepository,
   ) {}
 
   async execute(): Promise<Aircraft[]> {

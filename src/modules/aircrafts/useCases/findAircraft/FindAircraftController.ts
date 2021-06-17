@@ -9,7 +9,7 @@ class FindAircraftController {
     const findAircraftUseCase = container.resolve(FindAircraftUseCase)
 
     const aircraft = await findAircraftUseCase.execute({
-      id
+      id,
     })
 
     return response.json(aircraft)

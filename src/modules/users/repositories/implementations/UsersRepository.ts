@@ -1,7 +1,7 @@
-import { getRepository, Repository, UpdateResult } from "typeorm";
-import { ICreateUserDTO } from "../../dtos/ICreateUserDTO";
-import { User } from "../../entities/User";
-import { IUsersRepository } from "../IUsersRepository";
+import { getRepository, Repository, UpdateResult } from 'typeorm'
+import { ICreateUserDTO } from '../../dtos/ICreateUserDTO'
+import { User } from '../../entities/User'
+import { IUsersRepository } from '../IUsersRepository'
 
 class UsersRepository implements IUsersRepository {
   private repository: Repository<User>
@@ -14,14 +14,14 @@ class UsersRepository implements IUsersRepository {
     const user = this.repository.create({
       name,
       email,
-      password
+      password,
     })
 
     await this.repository.save(user)
   }
 
   async findByEmail(email: string): Promise<User> {
-    const user = await this.repository.findOne({ email})
+    const user = await this.repository.findOne({ email })
 
     return user
   }
@@ -37,7 +37,7 @@ class UsersRepository implements IUsersRepository {
 
   async findById(id: string): Promise<User> {
     const user = await this.repository.findOne(id)
-    
+
     // everyone can list it, so we cannot show the user hashed-password
     // delete user.password
 
@@ -52,17 +52,23 @@ class UsersRepository implements IUsersRepository {
 
   async updateUser(id: string, name: string): Promise<UpdateResult> {
     const user = await this.repository
-    .createQueryBuilder()
-    .update(User)
-    .set({ name, updated_at: new Date() })
-    .where("id = :id", { id })
-    .returning(["id", "name", "email", "password", "created_at", "updated_at"])
-    .updateEntity(true)
-    .execute();
+      .createQueryBuilder()
+      .update(User)
+      .set({ name, updated_at: new Date() })
+      .where('id = :id', { id })
+      .returning([
+        'id',
+        'name',
+        'email',
+        'password',
+        'created_at',
+        'updated_at',
+      ])
+      .updateEntity(true)
+      .execute()
 
     return user
   }
-
 }
 
 export { UsersRepository }

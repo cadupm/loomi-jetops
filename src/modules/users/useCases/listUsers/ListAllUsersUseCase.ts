@@ -1,12 +1,12 @@
-import { injectable, inject } from "tsyringe";
-import { User } from "../../entities/User";
-import { IUsersRepository } from "../../repositories/IUsersRepository";
+import { injectable, inject } from 'tsyringe'
+import { User } from '../../entities/User'
+import { IUsersRepository } from '../../repositories/IUsersRepository'
 
 @injectable()
 class ListAllUsersUseCase {
   constructor(
     @inject('UsersRepository')
-    private usersRepository: IUsersRepository
+    private usersRepository: IUsersRepository,
   ) {}
 
   async execute(): Promise<User[]> {

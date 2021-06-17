@@ -8,8 +8,12 @@ const calculateRoutes = Router()
 
 const calculateRoutesController = new CalculateRoutesController()
 
-const upload = multer(multerConfig)
+//const upload = multer(multerConfig)
 
-calculateRoutes.get('/:aircraftId', upload.single('file'), calculateRoutesController.handle)
+calculateRoutes.get(
+  '/:aircraftId',
+  //upload.single('file'),
+  calculateRoutesController.handle,
+)
 
 export { calculateRoutes }

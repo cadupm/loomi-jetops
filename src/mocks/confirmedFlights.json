@@ -1,0 +1,27 @@
+[
+  { 
+    "aircraftId": "IKAO",
+    "departure": "EVRA",
+    "arrival": "UUWW",
+    "departure_date": "2021-04-21 00:00:00"
+  },
+
+  {
+    "aircraftId": "IKAO",
+    "departure": "LUKK",
+    "arrival": "EDDH",
+    "departure_date": "2021-04-22 20:00:00"
+  },
+  {
+    "aircraftId": "SUP",
+    "departure": "EDDH",
+    "arrival": "EVRA",
+    "departure_date": "2021-04-21 00:00:00"
+  },
+  {
+    "aircraftId": "SUP",
+    "departure": "UUWW",
+    "arrival": "LUKK",
+    "departure_date": "2021-04-22 22:00:00"
+  }
+]

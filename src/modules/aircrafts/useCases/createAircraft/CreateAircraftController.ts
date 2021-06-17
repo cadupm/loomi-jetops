@@ -10,7 +10,7 @@ class CreateAircraftController {
 
     await createAircraftUseCase.execute({
       name,
-      type
+      type,
     })
 
     return response.status(201).send()

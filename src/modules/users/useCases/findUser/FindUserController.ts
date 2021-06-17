@@ -9,7 +9,7 @@ class FindUserController {
     const findUserUseCase = container.resolve(FindUserUseCase)
 
     const user = await findUserUseCase.execute({
-      id
+      id,
     })
 
     return response.json(user)

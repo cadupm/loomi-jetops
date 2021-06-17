@@ -1,6 +1,6 @@
-import { inject, injectable } from "tsyringe";
-import { AppError } from "../../../../errors/AppError";
-import { IAircraftsRepository } from "../../repositories/IAircrafsRepository";
+import { inject, injectable } from 'tsyringe'
+import { AppError } from '../../../../errors/AppError'
+import { IAircraftsRepository } from '../../repositories/IAircrafsRepository'
 
 interface IRequest {
   name: string
@@ -11,10 +11,10 @@ interface IRequest {
 class CreateAircraftUseCase {
   constructor(
     @inject('AircraftsRepository')
-    private aircraftsRepository: IAircraftsRepository
+    private aircraftsRepository: IAircraftsRepository,
   ) {}
 
-  async execute({ name, type }:IRequest): Promise<void> {
+  async execute({ name, type }: IRequest): Promise<void> {
     const existentAircraft = await this.aircraftsRepository.findByName(name)
 
     if (existentAircraft) {
@@ -23,7 +23,7 @@ class CreateAircraftUseCase {
 
     await this.aircraftsRepository.create({
       name,
-      type
+      type,
     })
   }
 }

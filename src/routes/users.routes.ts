@@ -21,5 +21,4 @@ usersRoutes.get('/:id', findUserController.handle)
 usersRoutes.delete('/:id', ensureAuthenticated, deleteUserController.handle)
 usersRoutes.patch('/', ensureAuthenticated, updateUserController.handle)
 
-
 export { usersRoutes }

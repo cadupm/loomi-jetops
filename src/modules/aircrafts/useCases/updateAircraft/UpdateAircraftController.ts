@@ -11,7 +11,7 @@ class UpdateAircraftController {
 
     const aircraft = await updateAircraftUseCase.execute({
       id,
-      name
+      name,
     })
 
     return response.json(aircraft)

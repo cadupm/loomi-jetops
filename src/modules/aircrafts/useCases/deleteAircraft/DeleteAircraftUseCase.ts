@@ -1,7 +1,7 @@
-import { inject, injectable } from "tsyringe";
-import { AppError } from "../../../../errors/AppError";
-import { Aircraft } from "../../entities/Aircraft";
-import { IAircraftsRepository } from "../../repositories/IAircrafsRepository";
+import { inject, injectable } from 'tsyringe'
+import { AppError } from '../../../../errors/AppError'
+import { Aircraft } from '../../entities/Aircraft'
+import { IAircraftsRepository } from '../../repositories/IAircrafsRepository'
 
 interface IRequest {
   id: string
@@ -11,7 +11,7 @@ interface IRequest {
 class DeleteAircraftUseCase {
   constructor(
     @inject('AircraftsRepository')
-    private aircraftsRepository: IAircraftsRepository
+    private aircraftsRepository: IAircraftsRepository,
   ) {}
 
   async execute({ id }: IRequest): Promise<Aircraft[]> {

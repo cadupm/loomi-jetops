@@ -10,7 +10,7 @@ class DeleteAircraftController {
     const deleteAircraftUseCase = container.resolve(DeleteAircraftUseCase)
 
     const remainingAircrafts = await deleteAircraftUseCase.execute({
-      id
+      id,
     })
 
     return response.json(remainingAircrafts)
