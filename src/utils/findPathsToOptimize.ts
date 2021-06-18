@@ -1,9 +1,8 @@
 import { addMinutes, parseISO } from 'date-fns'
-import { DefaultNamingStrategy } from 'typeorm'
 // import { getFlightDuration } from './getFlightDuration'
 import { IConfirmedFlights } from '../calculateRoutes/CalculateRoutesUseCase'
 
-import aviapages from '../mocks/details.json'
+import aviapages from '../mocks/oportunities.json'
 
 export interface IOptimizePaths {
   aircraftId: string

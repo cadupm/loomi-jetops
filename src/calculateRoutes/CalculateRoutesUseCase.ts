@@ -53,8 +53,7 @@ class CalculateRoutesUseCase {
   } */
 
   async execute(aircraftId: string): Promise<IPossiblePaths[]> {
-    const allconfirmedFlights = confirmedFlights
-    const specificAircraftConfirmedFlights = allconfirmedFlights.filter(
+    const specificAircraftConfirmedFlights = confirmedFlights.filter(
       flight => flight.aircraftId === aircraftId,
     )
 
@@ -67,6 +66,7 @@ class CalculateRoutesUseCase {
     const possiblePaths = await Promise.all(
       pathsToOptimize.map(path => {
         const graph = optimizePathGraph(path)
+        // console.log(graph)
         return optimalDfs(
           graph,
           path.from,

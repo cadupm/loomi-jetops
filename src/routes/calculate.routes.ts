@@ -1,6 +1,6 @@
 import { Router } from 'express'
-import multer from 'multer'
-import multerConfig from '../config/upload'
+// import multer from 'multer'
+// import multerConfig from '../config/upload'
 
 import { CalculateRoutesController } from '../calculateRoutes/CalculateRoutesController'
 

@@ -1,0 +1,194 @@
+[
+  {
+    "departure": "UUWW",
+    "arrival": "EVRA",
+    "departure_date": "2021-04-21 08:00:00",
+    "flight_duration": 55,
+    "turn_around": 35,
+    "profit": 4200
+  },
+  {
+    "departure": "UUWW", 
+    "arrival": "LUKK",
+    "departure_date": "2021-04-21 14:30:00",
+    "flight_duration": 55,
+    "turn_around": 35,
+    "profit": 4400
+  },
+  {
+    "departure": "LUKK", 
+    "arrival": "EVRA",
+    "departure_date": "2021-04-21 16:30:00",
+    "flight_duration": 30,
+    "turn_around": 60,
+    "profit": 5000
+  },
+  {
+    "departure": "EVRA", 
+    "arrival": "UUWW",
+    "departure_date": "2021-04-21 19:30:00",
+    "flight_duration": 55,
+    "turn_around": 35,
+    "profit": 5200
+  },
+  {
+    "departure": "EVRA",
+    "arrival": "LUKK",
+    "departure_date": "2021-04-21 14:00:00",
+    "flight_duration": 50,
+    "turn_around": 35,
+    "profit": 4000
+  },
+  {
+    "departure": "EDDH",
+    "arrival": "LUKK",
+    "departure_date": "2021-04-21 22:00:00",
+    "flight_duration": 30,
+    "turn_around": 30,
+    "profit": 4500
+  },
+  {
+    "departure": "UUWW",
+    "arrival": "LUKK",
+    "departure_date": "2021-04-22 06:30:00",
+    "flight_duration": 70,
+    "turn_around": 22,
+    "profit": 4400
+  },
+  {
+    "departure": "EDDH",
+    "arrival": "EVRA",
+    "departure_date": "2021-04-21 15:00:00",
+    "flight_duration": 80,
+    "turn_around": 20,
+    "profit": 3000
+  },
+  {
+    "departure": "UUWW",
+    "arrival": "LUKK",
+    "departure_date": "2021-04-21 23:00:00",
+    "flight_duration": 45,
+    "turn_around": 60,
+    "profit": 2900
+  },
+  {
+    "departure": "LUKK",
+    "arrival": "UUWW",
+    "departure_date": "2021-04-21 14:00:00",
+    "flight_duration": 120,
+    "turn_around": 30,
+    "profit": 8000
+  },
+  {
+    "departure": "LUKK",
+    "arrival": "EVRA",
+    "departure_date": "2021-04-21 13:00:00",
+    "flight_duration": 100,
+    "turn_around": 15,
+    "profit": 5300
+  },
+  {
+    "departure": "EVRA",
+    "arrival": "EDDH",
+    "departure_date": "2021-04-21 13:00:00",
+    "flight_duration": 66,
+    "turn_around": 32,
+    "profit": 7300
+  },
+  {
+    "departure": "EVRA",
+    "arrival": "UUWW",
+    "departure_date": "2021-04-21 13:00:00",
+    "flight_duration": 55,
+    "turn_around": 55,
+    "profit": 5800
+  },
+  {
+    "departure": "EVRA",
+    "arrival": "UUWW",
+    "departure_date": "2021-04-21 14:00:00",
+    "flight_duration": 51,
+    "turn_around": 29,
+    "profit": 4150
+  },
+  {
+    "departure": "EVRA",
+    "arrival": "UUWW",
+    "departure_date": "2021-04-21 17:00:00",
+    "flight_duration": 20,
+    "turn_around": 30,
+    "profit": 3950
+  },
+  {
+    "departure": "EVRA",
+    "arrival": "LUKK",
+    "departure_date": "2021-04-21 06:00:00",
+    "flight_duration": 30,
+    "turn_around": 20,
+    "profit": 4080
+  },
+  {
+    "departure": "EVRA",
+    "arrival": "LUKK",
+    "departure_date": "2021-04-21 03:00:00",
+    "flight_duration": 30,
+    "turn_around": 20,
+    "profit": 4920
+  },
+  {
+    "departure": "LUKK",
+    "arrival": "EVRA",
+    "departure_date": "2021-04-21 04:00:00",
+    "flight_duration": 30,
+    "turn_around": 20,
+    "profit": 5700
+  },
+  {
+    "departure": "LUKK",
+    "arrival": "EDDH",
+    "departure_date": "2021-04-21 04:30:00",
+    "flight_duration": 30,
+    "turn_around": 20,
+    "profit": 4800
+  },
+  {
+    "departure": "LUKK",
+    "arrival": "EDDH",
+    "departure_date": "2021-04-21 20:00:00",
+    "flight_duration": 30,
+    "turn_around": 20,
+    "profit": 2900
+  },
+  {
+    "departure": "EDDH",
+    "arrival": "EVRA",
+    "departure_date": "2021-04-22 21:00:00",
+    "flight_duration": 30,
+    "turn_around": 20,
+    "profit": 3800
+  },  
+  {
+    "departure": "EDDH",
+    "arrival": "EVRA",
+    "departure_date": "2021-04-21 08:00:00",
+    "flight_duration": 30,
+    "turn_around": 20,
+    "profit": 5600
+  },
+  {
+    "departure": "EDDH",
+    "arrival": "UUWW",
+    "departure_date": "2021-04-21 22:30:00",
+    "flight_duration": 30,
+    "turn_around": 20,
+    "profit": 4000
+  },
+  {
+    "departure": "EDDH",
+    "arrival": "UUWW",
+    "departure_date": "2021-04-22 00:00:00",
+    "flight_duration": 30,
+    "turn_around": 20,
+    "profit": 5500
+  }
+]

@@ -5,13 +5,18 @@
     "arrival": "UUWW",
     "departure_date": "2021-04-21 00:00:00"
   },
-
   {
     "aircraftId": "IKAO",
     "departure": "LUKK",
     "arrival": "EDDH",
     "departure_date": "2021-04-22 20:00:00"
   },
+  {
+    "aircraftId": "IKAO",
+    "departure": "EDDH",
+    "arrival": "EVRA",
+    "departure_date": "2021-04-22 21:00:00"
+  },  
   {
     "aircraftId": "SUP",
     "departure": "EDDH",
@@ -23,5 +28,23 @@
     "departure": "UUWW",
     "arrival": "LUKK",
     "departure_date": "2021-04-22 22:00:00"
+  },
+  {
+    "aircraftId": "ALO",
+    "departure": "LUKK",
+    "arrival": "EVRA",
+    "departure_date": "2021-04-21 02:00:00"
+  },
+  {
+    "aircraftId": "ALO",
+    "departure": "EVRA",
+    "arrival": "EDDH",
+    "departure_date": "2021-04-21 15:00:00"
+  },
+  {
+    "aircraftId": "ALO",
+    "departure": "UUWW",
+    "arrival": "EDDH",
+    "departure_date": "2021-04-22 01:30:00"
   }
 ]

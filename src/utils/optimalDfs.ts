@@ -1,7 +1,7 @@
 import { addMinutes, isAfter, parseISO } from 'date-fns'
 import { v4 } from 'uuid'
 // import { getFlightDuration } from './getFlightDuration'
-import aviapages from '../mocks/details.json'
+import aviapages from '../mocks/oportunities.json'
 
 interface IFlight {
   departure: string
